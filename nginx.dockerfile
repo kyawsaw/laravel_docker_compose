@@ -3,8 +3,7 @@ FROM nginx:alpine
 RUN apk add --no-cache nano
 
 RUN apk add python3 python3-dev py3-pip build-base libressl-dev musl-dev libffi-dev rust cargo
-RUN pip3 install pip --upgrade
-RUN pip3 install certbot-nginx
+RUN apk add certbot-nginx
 RUN mkdir /etc/letsencrypt
 
 COPY ./nginx/nginx.conf /etc/nginx/
